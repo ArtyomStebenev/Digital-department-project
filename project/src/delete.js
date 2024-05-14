@@ -1,6 +1,6 @@
 export async function deleteMusic(key) {
     try{
-        await fetch('http://localhost:3000/music/' + key, {method:"Delete"});
+        await fetch('http://localhost:3000/music$' + key, {method:"Delete"});
 
         return 'status 204';
     }

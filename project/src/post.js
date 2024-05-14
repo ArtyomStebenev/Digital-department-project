@@ -1,7 +1,5 @@
 export async function postMusic(value) {
     try{
-        //value: ['id', 'nameOfBand', 'album', 'year'];
-
         const data = await fetch('http://localhost:3000/music', //+ JSON.stringify(20, value.nameOfBand, value.album, value.year), 
             {
             method:"Post",
@@ -9,7 +7,6 @@ export async function postMusic(value) {
             body: JSON.stringify({'id': 20, 'nameOfBand':value.nameOfBand, 'album':value.album, 'year':value.year }) 
         });
                 
-
 
         let music = await data.json();
         console.log(music);

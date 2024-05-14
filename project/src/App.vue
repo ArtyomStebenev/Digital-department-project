@@ -1,4 +1,5 @@
 <template>
+  {{ music.value }}
   <div>
     <DxDataGrid
       id="gridContainer"
@@ -56,7 +57,6 @@
         />
       </div>
       <ul>
-        {{ music }}
         <li
           v-for="(event, index) in events"
           :key="index"
@@ -79,17 +79,31 @@
   import { deleteMusic } from "./delete.js";
   import { postMusic } from "./post.js";
 
-  
+  // TODO:
+  // исправить асинхронность, обращаться к элементам по ключам, протестировать все запросы
+  // дописать функциональность App.vue 
+  // Фичи: 
+  // парсить в интернете краткую инфу об альбоме, абложку
+  // прописать свой css
+
 
   //setTimeout(deleteMusic('5f0c'), 1000);
-  let hh = {
+  /* let hh = {
     nameOfBand: "govno",
     album: "mocha",
     year: 1954
-  }
-  postMusic(hh);
+  } */
+  //postMusic(hh);
 
-  getMusicList();
+  let music = ref('');
+  //music.value = getMusicList(); 
+
+
+  let jj = getMusicList();
+  jj.then((result) => { console.log("Результат: " + result); });
+  
+  deleteMusic(6);
+  
 
 
   /* const response = await fetch(mainUrl);

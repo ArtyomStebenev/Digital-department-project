@@ -1,11 +1,19 @@
 export async function getMusicList() {
     try{
-      const data = await fetch('http://localhost:3000/music', {method:"Get"});
 
-      let music = await data.json();
-      console.log(music);
+      /* fetch('http://localhost:3000/music', {method:"Get"})
+      .then((response) => response.json())
+      .then((data) => { console.log("Результат: " + data); })
+      .catch((error) => { console.error("Ошибка: " + error.message); }); */
 
-      return 'status 200';
+
+      const response = await fetch('http://localhost:3000/music', {method:"Get"});
+
+      const music = await response.json();
+
+      //music.then((result) => { console.log("Результат:" + result); });
+
+      return await music;
     }
-    catch(ex){ throw new Error(ex); }
+    catch(ex){ console.log(ex); }
 }
