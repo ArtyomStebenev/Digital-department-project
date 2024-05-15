@@ -80,7 +80,7 @@
   import { postMusic } from "./post.js";
 
   // TODO:
-  // исправить асинхронность, обращаться к элементам по ключам, протестировать все запросы
+  // вернуть массив из getMusicList, обращаться к элементам по ключам, протестировать все запросы
   // дописать функциональность App.vue 
   // Фичи: 
   // парсить в интернете краткую инфу об альбоме, абложку
@@ -99,11 +99,17 @@
   //music.value = getMusicList(); 
 
 
-  let jj = getMusicList();
-  jj.then((result) => { console.log("Результат: " + result); });
+  /* let jj = 
+  async (): Promise<any> => { 
+    console.log("Результат: " + getMusicList);
+    
+  } */ 
+  //jj.then((result) => { console.log("Результат: " + result); });
   
-  deleteMusic(6);
+  //getMusicList().then((array) => { console.log("Результат: " + array); });
+  //console.log("Результат: " + getMusicList());
   
+  getMusicList();
 
 
   /* const response = await fetch(mainUrl);
@@ -111,7 +117,7 @@
   
   console.log(music);  */ 
   
-  
+  //deleteMusic(20);
 
 
 
